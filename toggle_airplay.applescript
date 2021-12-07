@@ -1,13 +1,18 @@
 #!/usr/bin/osascript
+# Toggle airplay reciever on and off
+# Scripting the GUI is a stopgap until I can figure out how to toggle that setting directly.
+# Based on https://apple.stackexchange.com/questions/431846/toggle-airplay-receiver-server-with-the-command-line-on-macos-monteray/431876#431876
 
 on run argv
-    set check to null
-    if not argv is {} then
-      if item 1 of argv is equal to "off" then
-          set check to false
-      else if item 1 of argv is equal to "on" then
-          set check to true
-      end if
+    if argv is {} then
+      tell me to error "Usage: toggle_airplay <on|off|toggle>"
+    end if
+    if item 1 of argv is equal to "off" then
+        set check to false
+    else if item 1 of argv is equal to "on" then
+        set check to true
+    else if item 1 of argv is equal to "toggle" then
+        set check to null
     end if
 
     tell application "System Preferences" to reveal pane id "com.apple.preferences.sharing"
