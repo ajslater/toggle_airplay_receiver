@@ -1,5 +1,5 @@
 #!/usr/bin/osascript
-# Toggle airplay reciever on and off
+# Toggle airplay receiver on and off
 # Scripting the GUI is a stopgap until I can figure out how to toggle that setting directly.
 # Based on https://apple.stackexchange.com/questions/431846/toggle-airplay-receiver-server-with-the-command-line-on-macos-monteray/431876#431876
 
